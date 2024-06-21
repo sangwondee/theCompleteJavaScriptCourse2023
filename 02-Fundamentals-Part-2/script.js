@@ -307,3 +307,5 @@ const wichans = {
 // "Wichan is a 46-year old teacher, and he has a/no driver's license"
 // console.log(`${wichans.firstName} is a ${wichans.calcAge()}-year old teacher, and he has ${wichans.checkLicense()} `);
 console.log(wichans.getSummary());
+
+// test commit
