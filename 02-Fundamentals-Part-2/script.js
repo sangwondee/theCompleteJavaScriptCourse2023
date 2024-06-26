@@ -270,33 +270,33 @@
 // Google Search for more information => mdn operator precedence
 
 
-const wichans = {
-    firstName: 'Wichan',
-    lastName: 'Sangwondee',
-    birthYear: 1991,
-    job: 'developer',
-    friends: ['Michael', 'Peter', 'Steven'],
-    hasDriversLicense: true,
-    // calcAge: function (birthYear) {
-    //     return 2037 - this.birthYear
-    // }
+// const wichans = {
+//     firstName: 'Wichan',
+//     lastName: 'Sangwondee',
+//     birthYear: 1991,
+//     job: 'developer',
+//     friends: ['Michael', 'Peter', 'Steven'],
+//     hasDriversLicense: true,
+//     // calcAge: function (birthYear) {
+//     //     return 2037 - this.birthYear
+//     // }
 
-    // calcAge: function () {
-    //     console.log(this);
-    //     return 2037 - this.birthYear
-    // }
-    calcAge: function () {
-        this.age = 2037 - this.birthYear
-        return this.age 
-    },
-    checkLicense: function () {
-        return this.hasDriversLicense ? `a driver's license`  : `no driver's license`;
-    },
-    getSummary: function () {
-        return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${this.hasDriversLicense ? `a driver's license` : `no driver's license`} `
-    }
-// this คือตัวแปรที่ใช้ใน obejct 
-}
+//     // calcAge: function () {
+//     //     console.log(this);
+//     //     return 2037 - this.birthYear
+//     // }
+//     calcAge: function () {
+//         this.age = 2037 - this.birthYear
+//         return this.age 
+//     },
+//     checkLicense: function () {
+//         return this.hasDriversLicense ? `a driver's license`  : `no driver's license`;
+//     },
+//     getSummary: function () {
+//         return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${this.hasDriversLicense ? `a driver's license` : `no driver's license`} `
+//     }
+// // this คือตัวแปรที่ใช้ใน obejct 
+// }
 
 // console.log(wichans.calcAge());
 // console.log(wichans.age);
@@ -306,6 +306,106 @@ const wichans = {
 // Challenge
 // "Wichan is a 46-year old teacher, and he has a/no driver's license"
 // console.log(`${wichans.firstName} is a ${wichans.calcAge()}-year old teacher, and he has ${wichans.checkLicense()} `);
-console.log(wichans.getSummary());
+// console.log(wichans.getSummary());
 
-// test commit
+// const Mark = {
+//     fullName : 'Mark Miller',
+//     mass: 78,
+//     height: 1.69,
+//     calcBMI: function () {
+//         this.bmi = Math.round(this.mass / (this.height * this.height) * 10) / 10
+//         return this.bmi
+//     },
+// }
+
+// const John = {
+//     fullName : 'John Smith',
+//     mass: 92,
+//     height: 1.95,
+//     calcBMI: function () {
+//         this.bmi = Math.round(this.mass / (this.height * this.height) * 10) /10
+//         return this.bmi
+//     }
+// }
+
+// console.log(John.calcBMI() > Mark.calcBMI())
+
+
+// console.log(`${John.fullName}'s BMI (${John.bmi}) ${John.bmi >= Mark.bmi ? `is higher than` : `is less than` } ${Mark.fullName}'s (${Mark.bmi}) ! `);
+// debugger;
+
+// for (let rep = 0; rep < array.length; rep++) {
+//     const element = array[rep];
+    
+// }
+
+// for loop keeps running while condition is TRUE
+// for (let rep  = 1; rep <= 10; rep++) {
+//     console.log(`Lifting weights repetition ${rep}`)
+// }
+
+
+// const wichan = [
+//     , 'Wichan' 
+//     , 'Sangwondee' 
+//     , 2037 - 1991
+//     , 'techer'
+//     , ['Michael', 'Peter', 'Steven']
+//     , true
+// ]
+
+// const types = [];
+
+// for (let i = 0; i < wichan.length; i++) {
+//     // Reading fron wichan array
+//     console.log(wichan[i], typeof wichan[i]);
+
+//     // Filling types array
+//     // types[i] = typeof jonas[i];
+//     types.push(typeof wichan[i])
+// }
+
+// // console.log(types);
+
+// const years = [1991, 2007, 1969, 2020]
+// const ages = []
+
+// for(let i = 0; i < years.length; i++) {
+//     ages.push(2037 - years[i]) 
+// }
+
+// // console.log(ages);
+
+// // continue and break
+// console.log('--- ONLY STRINGS ---');
+// for (let i = 0; i < wichan.length; i++) {
+//     if (typeof wichan[i] !== 'string') continue;
+    
+//     console.log(wichan[i], typeof wichan[i]);
+// }
+
+// console.log('--- BREAK WITH NUMBER ---');
+// for (let i = 0; i < wichan.length; i++) {
+//     if (typeof wichan[i] === 'number') break;
+    
+//     console.log(wichan[i], typeof wichan[i]);
+// }
+
+const wichan = [
+    , 'Wichan' 
+    , 'Sangwondee' 
+    , 2037 - 1991
+    , 'techer'
+    , ['Michael', 'Peter', 'Steven']
+]
+
+for (let i = wichan.length - 1; i>=0; i-- ) {
+    console.log(wichan[i]);
+}
+
+for (let exercise = 1; exercise < 4; exercise++) {
+    console.log(`-------- Starting exericise ${exercise}`);
+    for (let rep = 1; rep < 6; rep++) {
+        console.log(`Exercise ${exercise}: Lifting weight repetition ${rep}`);        
+    }
+}
