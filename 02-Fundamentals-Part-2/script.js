@@ -391,21 +391,70 @@
 //     console.log(wichan[i], typeof wichan[i]);
 // }
 
-const wichan = [
-    , 'Wichan' 
-    , 'Sangwondee' 
-    , 2037 - 1991
-    , 'techer'
-    , ['Michael', 'Peter', 'Steven']
-]
+// const wichan = [
+//     , 'Wichan' 
+//     , 'Sangwondee' 
+//     , 2037 - 1991
+//     , 'techer'
+//     , ['Michael', 'Peter', 'Steven']
+// ]
 
-for (let i = wichan.length - 1; i>=0; i-- ) {
-    console.log(wichan[i]);
+// for (let i = wichan.length - 1; i>=0; i-- ) {
+//     console.log(wichan[i]);
+// }
+
+// for (let exercise = 1; exercise < 4; exercise++) {
+//     console.log(`-------- Starting exericise ${exercise}`);
+//     for (let rep = 1; rep < 6; rep++) {
+//         console.log(`Exercise ${exercise}: Lifting weight repetition ${rep}`);
+//     }
+// }
+
+// let rep = 1
+// while (rep <= 10) {
+//     console.log(`WHILE: Exercise Lifting weight repetition ${rep}`);
+//     rep++;
+// }
+
+
+// let dice = Math.trunc(Math.random() * 6) + 1;
+// // console.log(dice);
+
+// while (dice !== 6) {
+//     console.log(`You rolled a ${dice}`);
+//     dice = Math.trunc(Math.random() * 6) + 1;
+//     if (dice === 6) console.log('Loop is about to end (6)...');
+// }
+
+
+const calcTip = function (bill) {
+    return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
 }
 
-for (let exercise = 1; exercise < 4; exercise++) {
-    console.log(`-------- Starting exericise ${exercise}`);
-    for (let rep = 1; rep < 6; rep++) {
-        console.log(`Exercise ${exercise}: Lifting weight repetition ${rep}`);        
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+ for (let i = 0; i < bills.length; i++) {
+    const tip = calcTip(bills[i]);
+    tips.push(tip);
+    totals.push(tip + bills[i])
+}
+
+// console.log(bills, tips,totals);
+
+const calcAverage = function (arr) {
+    let sum = 0
+    for (let i = 0; i < arr.length; i++) {
+        // sum = sum + arr[i];
+        sum +=  arr[i];
     }
+
+    return sum / arr.length;
 }
+
+// console.log(calcAverage([2, 3, 7]));
+
+// console.log(calcAverage(bills))
+console.log(calcAverage(tips))
+console.log(calcAverage(totals))
