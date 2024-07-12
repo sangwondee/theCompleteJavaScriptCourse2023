@@ -11,20 +11,17 @@ const temperatures = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
 // - How to compute max and min temperatures?
 // - What's a sensor error ? and what to do?
 
-
 // 2) Breaking up into sub-problems
-// - How to ignore errors? 
+// - How to ignore errors?
 // - Find Max value in temp array
 // - Find Min value in temp array
 // - Subtract min from max (amplitude) and return it
 
-
 const calcTempAmplitude = function (temps) {
     let max = temps[0];
     let min = temps[0];
-    
-    for (let i = 0; i < temps.length; i++)
-    {
+
+    for (let i = 0; i < temps.length; i++) {
         const curTemp = temps[i];
 
         if (typeof curTemp != 'number') continue;
@@ -35,14 +32,13 @@ const calcTempAmplitude = function (temps) {
     // console.log(max);
     // console.log(min);
 
-    return max - min
-}
+    return max - min;
+};
 
 // calcTempAmplitude([3,7,4, 1, 8])
 
 const amplitude = calcTempAmplitude(temperatures);
 console.log(amplitude);
-
 
 // PROBLEM
 // Function should now receive 2 array 2 of temps
@@ -50,10 +46,8 @@ console.log(amplitude);
 // 1.) Understanding the problem
 // - With 2 arrays, should we implement functionality twice ? NO! Just merge two arrays
 
-
 // 2.) Breaking up into sub-problems
 // - How to merge 2 array
-
 
 // const calcTempAmplitudeBug = function (t1, t2) {
 //     const temps = t1.concat(t2);
@@ -62,14 +56,14 @@ console.log(amplitude);
 
 //     let max = temps[0];
 //     let min = temps[0];
-    
+
 //     for (let i = 0; i < temps.length; i++)
 //     {
 //         const curTemp = temps[i];
 
-//         if (typeof curTemp != 'number') continue;       
-//         if (curTemp > max) max = curTemp;        
-//         if (curTemp < min) min = curTemp;        
+//         if (typeof curTemp != 'number') continue;
+//         if (curTemp > max) max = curTemp;
+//         if (curTemp < min) min = curTemp;
 //     }
 
 //     console.log(max, min);
@@ -87,13 +81,15 @@ const measureKelvin = function () {
         type: 'temp',
         unit: 'celsius',
         value: prompt('degress celsius:'),
-    }
+    };
 
     // console.table(measurement);
 
     const kelvin = Number(measurement.value) + 273;
 
     return kelvin;
-}
+};
 
 // console.log(measureKelvin());
+
+// test git hub
