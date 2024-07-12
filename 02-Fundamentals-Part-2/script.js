@@ -458,3 +458,8 @@
 // console.log(calcAverage(bills))
 // console.log(calcAverage(tips))
 // console.log(calcAverage(totals))
+
+// change something
+
+
+// Rember, we're gonna use strict mode in all scripts now !
