@@ -140,23 +140,17 @@ TEST DATA 1: [17, 21, 23]
 TEST DATA 2: [12, 5, -5, 0, 4]
 */
 
-const printForecast = function (arr) {
-    var str1 = '';
-    let arrSorted = arr.sort((a, b) => a - b);
+// const printForecast = function (arr) {
+//     let str = '';
+//     for (let i = 0; i < arr.length; i++) {
+//         str += `...${arr[i]}ºC in ${i + 1} days `;
+//     }
 
-    // debugger;
-    for (let i = 0; i < arrSorted.length; i++) {
-        const tempNum = arrSorted[i];
-        const dayCount = i + 1;
-
-        str1 += `...${tempNum}ºC in ${dayCount} days `;
-    }
-
-    return str1;
-};
+//     return str;
+// };
 
 // const logString1 = printForecast([17, 21, 23]);
 // console.log(logString1);
 
-const logString2 = printForecast([12, 5, -5, 0, 4]);
-console.log(logString2);
+// const logString2 = printForecast([12, 5, -5, 0, 4]);
+// console.log(logString2);
