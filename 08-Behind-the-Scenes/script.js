@@ -105,23 +105,79 @@
 // calcAgeArrow(1980)
 
 // เราสามารถเรียก function ใน Obj โดยใช้ this keyword นี้ได้
+// const jonas = {
+//   year : 1991,
+//   calcAge : function () {
+//     console.log(this);
+//     console.log(2037 - this.year);
+//   }
+// }
+
+// jonas.calcAge();
+
+// const matilda = {
+//   year: 2017
+// }
+
+// // method borrowing
+// matilda.calcAge = jonas.calcAge;
+// matilda.calcAge()
+
+// const f = jonas.calcAge
+// f()
+
+var firstname = 'Matildaaaaa'
+
 const jonas = {
-  year : 1991,
-  calcAge : function () {
-    console.log(this);
-    console.log(2037 - this.year);
+  firstname: 'Jonas',
+  year: 1991,
+  calcAge: function () {
+    // console.log(this);
+    console.log(2037 - this.year)
+
+    // solution 1 เป็นแบบเก่าที่ ไม่ใช้ es6
+    // const self = this;
+    // const isMillenial = function () {
+    //   console.log(self);      
+    //   console.log(self.year >= 1981 && self.year <= 1996);
+    //   // console.log(this.year >= 1981 && this.year <= 1996);
+    // }
+
+    // solution 2 แบบใหม่ให้ใช้แบบ es 6
+    const isMillenial = () => {
+      console.log(this);
+      console.log(this.year >= 1981 && this.year <= 1996);
+      // console.log(this.year >= 1981 && this.year <= 1996);
+    }
+
+    isMillenial();
+  },
+
+  // arrow function ไม่ทำงานกับ this keyword
+  // เราไม่ควรใช้ arrow function เป็น Method !!!
+  greet: function () {
+    console.log(this)    
+    console.log(`Hey ${this.firstname}`)
   }
 }
 
+jonas.greet();
 jonas.calcAge();
 
-const matilda = {
-  year: 2017
+// arguments key word
+// มันสามารถส่งตัวแปล(arguments) เข้าไปได้แต่เรียกใช้ parameter ไม่ได้
+const addExpr = function (a, b) {
+  // ตัวแปล arguments นี้ สามารถตรวจดูตัวแปลได้
+  console.log(arguments);
+  return a + b
 }
 
-// method borrowing
-matilda.calcAge = jonas.calcAge;
-matilda.calcAge()
+addExpr(2, 5)
 
-const f = jonas.calcAge
-f()
+// แต่ถ้าหากเป็น arrow function ถ้าเราส่ง arguments เข้าไม่ไม่ถูกต้องมันจะ error เลย
+// var addArrow = (a, b) => {
+//   console.log(arguments);
+//   return a + b;
+// };
+
+// addArrow(2, 5, 8)
