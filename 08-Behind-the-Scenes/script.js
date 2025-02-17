@@ -83,8 +83,6 @@
 // console.log(y === window.y);
 // console.log(z === window.z);
 
-
-
 // เรื่อง this keyword
 // console.log(this);
 
@@ -126,7 +124,7 @@
 // const f = jonas.calcAge
 // f()
 
-var firstname = 'Matildaaaaa'
+var firstname = 'Matilda';
 
 const jonas = {
   firstname: 'Jonas',
@@ -138,7 +136,7 @@ const jonas = {
     // solution 1 เป็นแบบเก่าที่ ไม่ใช้ es6
     // const self = this;
     // const isMillenial = function () {
-    //   console.log(self);      
+    //   console.log(self);
     //   console.log(self.year >= 1981 && self.year <= 1996);
     //   // console.log(this.year >= 1981 && this.year <= 1996);
     // }
@@ -148,7 +146,7 @@ const jonas = {
       // console.log(this);
       // console.log(this.year >= 1981 && this.year <= 1996);
       // console.log(this.year >= 1981 && this.year <= 1996);
-    }
+    };
 
     isMillenial();
   },
@@ -158,8 +156,8 @@ const jonas = {
   greet: function () {
     // console.log(this)
     // console.log(`Hey ${this.firstname}`)
-  }
-}
+  },
+};
 
 jonas.greet();
 jonas.calcAge();
@@ -169,10 +167,10 @@ jonas.calcAge();
 const addExpr = function (a, b) {
   // ตัวแปล arguments นี้ สามารถตรวจดูตัวแปลได้
   // console.log(arguments);
-  return a + b
-}
+  return a + b;
+};
 
-addExpr(2, 5)
+addExpr(2, 5);
 
 // แต่ถ้าหากเป็น arrow function ถ้าเราส่ง arguments เข้าไม่ไม่ถูกต้องมันจะ error เลย
 // var addArrow = (a, b) => {
@@ -182,25 +180,22 @@ addExpr(2, 5)
 
 // addArrow(2, 5, 8)
 
-
-
 ////////////////////////////////////////////////////////////////////////
 // Object References in Practice (Shallow vs. Deep Copies)
 
 const jessica1 = {
   firstname: 'Jessica',
   lastname: 'Williams',
-  age: 27
-}
+  age: 27,
+};
 
 function marryPerson(originalPerson, newLastName) {
+  originalPerson.lastname = newLastName;
 
-  originalPerson.lastname = newLastName
-
-  return originalPerson
+  return originalPerson;
 }
 
-const marriedJessica = marryPerson(jessica1, 'Davis')
+const marriedJessica = marryPerson(jessica1, 'Davis');
 
 // const marriedJessica = jessica
 // marriedJessica.lastname = 'Davis'
@@ -212,11 +207,11 @@ const jessica = {
   firstname: 'Jessica',
   lastname: 'Williams',
   age: 27,
-  family: ['Alice', 'Bob']
-}
+  family: ['Alice', 'Bob'],
+};
 
 // Shallow copy
-const jessicaCopy = { ...jessica }
+const jessicaCopy = { ...jessica };
 jessicaCopy.lastname = 'Davis';
 
 // jessicaCopy.family.push('Mary');
@@ -228,9 +223,11 @@ jessicaCopy.lastname = 'Davis';
 // Deep copy/clone
 // structuredClone clone object จากตัวเดิมแต่ตัวเดิมไม่เปลี่ยน
 
-const jessicaClone = structuredClone(jessica)
+const jessicaClone = structuredClone(jessica);
 jessicaClone.family.push('Mary');
 jessicaClone.family.push('John');
 
-console.log('Orignal:', jessica);
+console.log('Original:', jessica);
 console.log('Clone:', jessicaClone);
+
+// test for home
