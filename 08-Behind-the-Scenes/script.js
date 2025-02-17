@@ -133,7 +133,7 @@ const jonas = {
   year: 1991,
   calcAge: function () {
     // console.log(this);
-    console.log(2037 - this.year)
+    // console.log(2037 - this.year)
 
     // solution 1 เป็นแบบเก่าที่ ไม่ใช้ es6
     // const self = this;
@@ -145,8 +145,8 @@ const jonas = {
 
     // solution 2 แบบใหม่ให้ใช้แบบ es 6
     const isMillenial = () => {
-      console.log(this);
-      console.log(this.year >= 1981 && this.year <= 1996);
+      // console.log(this);
+      // console.log(this.year >= 1981 && this.year <= 1996);
       // console.log(this.year >= 1981 && this.year <= 1996);
     }
 
@@ -156,8 +156,8 @@ const jonas = {
   // arrow function ไม่ทำงานกับ this keyword
   // เราไม่ควรใช้ arrow function เป็น Method !!!
   greet: function () {
-    console.log(this)    
-    console.log(`Hey ${this.firstname}`)
+    // console.log(this)
+    // console.log(`Hey ${this.firstname}`)
   }
 }
 
@@ -168,7 +168,7 @@ jonas.calcAge();
 // มันสามารถส่งตัวแปล(arguments) เข้าไปได้แต่เรียกใช้ parameter ไม่ได้
 const addExpr = function (a, b) {
   // ตัวแปล arguments นี้ สามารถตรวจดูตัวแปลได้
-  console.log(arguments);
+  // console.log(arguments);
   return a + b
 }
 
@@ -181,3 +181,56 @@ addExpr(2, 5)
 // };
 
 // addArrow(2, 5, 8)
+
+
+
+////////////////////////////////////////////////////////////////////////
+// Object References in Practice (Shallow vs. Deep Copies)
+
+const jessica1 = {
+  firstname: 'Jessica',
+  lastname: 'Williams',
+  age: 27
+}
+
+function marryPerson(originalPerson, newLastName) {
+
+  originalPerson.lastname = newLastName
+
+  return originalPerson
+}
+
+const marriedJessica = marryPerson(jessica1, 'Davis')
+
+// const marriedJessica = jessica
+// marriedJessica.lastname = 'Davis'
+
+console.log('Before:', jessica1);
+console.log('After:', marriedJessica);
+
+const jessica = {
+  firstname: 'Jessica',
+  lastname: 'Williams',
+  age: 27,
+  family: ['Alice', 'Bob']
+}
+
+// Shallow copy
+const jessicaCopy = { ...jessica }
+jessicaCopy.lastname = 'Davis';
+
+// jessicaCopy.family.push('Mary');
+// jessicaCopy.family.push('John');
+
+// console.log('Before:', jessica);
+// console.log('After:', jessicaCopy);
+
+// Deep copy/clone
+// structuredClone clone object จากตัวเดิมแต่ตัวเดิมไม่เปลี่ยน
+
+const jessicaClone = structuredClone(jessica)
+jessicaClone.family.push('Mary');
+jessicaClone.family.push('John');
+
+console.log('Orignal:', jessica);
+console.log('Clone:', jessicaClone);
