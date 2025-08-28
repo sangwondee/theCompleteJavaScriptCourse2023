@@ -40,6 +40,19 @@ const restaurant = {
   }
 };
 
+
+restaurant.numGuests = 0;
+const guest = restaurant.numGuests || 10;
+console.log(guest);
+
+// Nullish: null and undefined (NOT 0 or '')
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
+
+/*
+/////////////////////////////////////////
+// Short Ciruiting (&& and ||)
+
 console.log('------ OR -------');
 /// Use ANY data typeof, return ANY data typeof, short-circuiting
 console.log(3 || 'Jonas');
@@ -64,6 +77,8 @@ console.log('Hello' && 23 && null && 'jonas');
 if (restaurant.orderPizza) restaurant.orderPizza('mushrooms','spinach');
 
 restaurant.orderPizza && restaurant.orderPizza('mushrooms','spinach');
+
+*/
 
 /*
 /////////////////////////////
