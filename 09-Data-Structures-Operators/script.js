@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 ///////////////////////////////////////
 // Coding Challenge #1
 
@@ -20,7 +18,6 @@ Suppose we get data from a web service about a certain game (below). In this cha
 
 TEST DATA FOR 6: Use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'. Then, call the function again with players from game.scored
 */
-
 
 const game = {
   team1: 'Bayern Munich',
@@ -63,40 +60,61 @@ const game = {
   },
 };
 
-
 // 1.
 const [player1, player2] = game.players;
-console.log(player1, player2);
+// console.log(player1, player2);
 
 // 2.
-const [gk, ...fieldPlayers] = player1
-console.log(gk, fieldPlayers);
+const [gk, ...fieldPlayers] = player1;
+// console.log(gk, fieldPlayers);
 
 // 3.
 const allPlayers = [...player1, ...player2];
-console.log(allPlayers);
+// console.log(allPlayers);
 
 // 4.
 const players1Final = [...player1, 'Thiago', 'Coutinho', 'Perisic'];
 
 // 5.
-const { odds: { team1, x: draw, team2 } } = game;
-console.log(team1, draw, team2);
+const {
+  odds: { team1, x: draw, team2 },
+} = game;
+// console.log(team1, draw, team2);
 
 // 6.
 const printGoals = function (...players) {
-  console.log(`${players.length} goals were scored`);
+  // console.log(`${players.length} goals were scored`);
   for (const player of players) console.log(player);
 };
 
-printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
-printGoals(...game.scored);
+// printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
+// printGoals(...game.scored);
 
 // 7.
-const teamLikelyToWin = team1 < team2 && team1 < draw ? game.team1 : team2 < draw ? game.team2 : 'Draw';
-console.log(`The team most likely to win is : ${teamLikelyToWin}`);
+const teamLikelyToWin =
+  team1 < team2 && team1 < draw
+    ? game.team1
+    : team2 < draw
+    ? game.team2
+    : 'Draw';
+
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
 
+const openingHours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [weekdays[5]]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+}
 
 const restaurant = {
   name: 'Classico Italiano',
@@ -104,39 +122,31 @@ const restaurant = {
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22
-    },
-    fri : {
-      open: 11,
-      close: 23
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24
-    }
+  // ES6 enhanced object literals
+  openingHours,
+  order(starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
-  order : function (starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]]
-  },
-  orderDelivery: function ({
+  orderDelivery({
     starterIndex = 1,
     mainIndex = 0,
     time = '20:00',
-    address
+    address,
   }) {
-    // console.log(`Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`);
+    console.log(`Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`);
   },
-  orderPasta : function (ing1, ing2, ing3) {
-    console.log(`Here is your declicious pasta with ${ing1}, ${ing2} and ${ing3}`);
+  orderPasta(ing1, ing2, ing3) {
+    console.log(
+      `Here is your declicious pasta with ${ing1}, ${ing2} and ${ing3}`
+    );
   },
-  orderPizza: function(mainIngredient, ...ortherIngredients) {
+  orderPizza(mainIngredient, ...ortherIngredients) {
     console.log(mainIngredient);
     console.log(ortherIngredients);
-  }
+  },
 };
+
+console.log(restaurant);
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Logical Assignment Operators
@@ -170,8 +180,6 @@ const restaurant = {
 
 // console.log(rest1);
 // console.log(rest2);
-
-
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // The Nullish Coalescing Operator
@@ -276,7 +284,6 @@ restaurant.orderPizza('mushrooms');
 // // console.log(letters);
 // // console.log(...str)
 
-
 // **** Destructuring Objects ****
 // restaurant.orderDelivery({
 //   time: '22:30',
@@ -291,7 +298,7 @@ restaurant.orderPizza('mushrooms');
 // })
 
 // **** Destructuring Object ****
-const { name, openingHours, categories } = restaurant;
+// const { name, openingHours, categories } = restaurant;
 
 // console.log(name, openingHours, categories);
 
@@ -318,13 +325,11 @@ const { name, openingHours, categories } = restaurant;
 // ({a,b} = obj);
 // console.log(a,b);
 
-
 // Nested objects
 // const {
 //   fri : { open: o, close: c }
 // } = openingHours;
 // console.log(o, c);
-
 
 // **** Destructuring Arrays ****
 
