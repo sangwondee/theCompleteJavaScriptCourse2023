@@ -42,6 +42,22 @@ const game = {
 };
 
 // 1.
+for (const [i, player] of game.scored.entries())
+  console.log(`Goal ${i+1} : ${player}`);
+// 2. 
+let average = 0
+const odds = Object.values(game.odds);
+for (const odd of Object.values(game.odds)) average += odd;
+  average /= odds.length
+  console.log(average);
+
+// 3.
+for (const [team, odd] of Object.entries(game.odds)) {
+  const teamStr = team === 'x' ? 'draw' : `Victory ${game[team]}`;
+  console.log(`Odd of ${teamStr} ${odd}`);
+}
+  
+// 1.
 const [player1, player2] = game.players;
 // console.log(player1, player2);
 
@@ -121,6 +137,7 @@ const restaurant = {
     );
   },
   orderPizza(mainIngredient, ...ortherIngredients) {
+
     console.log(mainIngredient);
     console.log(ortherIngredients);
   },
@@ -128,30 +145,26 @@ const restaurant = {
 
 // Propety NAMES
 const properties = Object.keys(openingHours)
-console.log(properties);
+// console.log(properties);
 
-let openStr = `We are open on ${properties.length} days: ` ;
+let openStr = `We are open on ${properties.length} days: `;
 
 for (const day of properties) {
   openStr += `${day}, `;
 }
 
-console.log(openStr);
+// console.log(openStr);
 
 // Propety VALUES
 const values = Object.values(openingHours)
-console.log(values);
+// console.log(values);
 
 // Entire object
 const entries = Object.entries(openingHours);
-console.log(entries);
 
-// [key, value]
 for (const [day, { open, close }] of entries) {
-  console.log(`On ${day} we open at ${open} and close at ${close}`);
+  // console.log(`On ${day} we open at ${open} and close at ${close}`);
 }
-
-
 
 if (restaurant.openingHours && restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
 
@@ -183,8 +196,6 @@ const users = [
 
 // if (users.length > 0) console.log(users[0]?.name);
 // else console.log('User arry empty');
-
-
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Logical Assignment Operators
